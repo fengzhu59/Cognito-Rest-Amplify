@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:unit": "echo 'running unit tests'",
-    "test:e2de": "echo 'running e2e tests'",
+    "test:e2e": "echo 'running e2e tests'",
     "eject": "react-scripts eject"
 
   },

@@ -17,7 +17,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:unit": "echo 'running unit tests'",
+    "test:e2e": "echo 'running e2e tests'",
     "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [

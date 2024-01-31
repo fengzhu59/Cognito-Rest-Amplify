@@ -4,9 +4,18 @@ import { API, Auth } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { useState } from 'react';
 import '@aws-amplify/ui-react/styles.css';
+import callApiWithAPIKey from './fetchData';
 
 function App() {
   const [message, setMessage] = useState("waiting for api response")
+  const [apiData, setApiData] = useState(null);
+
+  const handleApiCallWithAPIKey = () => {
+    callApiWithAPIKey()
+      .then(data => {
+        setApiData("called api with API key"); // store the entire data object
+      });
+  }
 
   async function callApi() {
     const user = await Auth.currentAuthenticatedUser()
@@ -31,6 +40,8 @@ function App() {
         </p>
         <button onClick={callApi}>Call API</button>
         <p>{ message }</p>
+        <button onClick={handleApiCallWithAPIKey}>Call API using API key</button>
+        <p>{ apiData }</p>
       </header>
     </div>
   );
